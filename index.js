@@ -1,7 +1,22 @@
 const express = require ('express');
+const cors = require("cors");
 const app = express();
+require('./db/config');
+const User = require("./db/User")
 
-app.get("/",(req,resp)=>{
-    resp.send("HELLO BABY!")
+app.use(express.json()); 
+app.use(cors());
+
+app.get('/', (req, resp) => {
+   resp.send('Welcome!');
 });
-app.listen(5000);
+
+app.post("/add", async (req,resp)=>{
+   const user = new User(req.body);
+
+   let result = await user.save();
+   result = result.toObject();
+   resp.send(result);
+
+})
+app.listen(4500)
