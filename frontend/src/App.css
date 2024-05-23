@@ -3,3 +3,25 @@ body{
   font-family: 'Montserrat';
   font-size: 18px;
 }
+
+.inputbox{
+  margin: 25px;
+  display: block;
+  padding: 7px;
+  border: 2px solid skyblue;
+  border-radius: 5px;
+  width: 300px;
+}
+
+button {
+  margin: 25px;
+  padding: 10px;
+  width: 150px;
+  border: 1px solid ;
+  background-color: skyblue;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
