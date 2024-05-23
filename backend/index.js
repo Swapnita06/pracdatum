@@ -7,9 +7,10 @@ const User = require("./db/User")
 app.use(express.json()); 
 app.use(cors());
 
-app.get('/', (req, resp) => {
-   resp.send('<h1>WELCOME TO MY PAGE</h1>');
-   resp.send('Welcome!');
+app.get('/data', async(req, resp) => {
+   const users = await User.find();
+   resp.json(users);
+   
 });
 
 app.post("/add", async (req,resp)=>{
